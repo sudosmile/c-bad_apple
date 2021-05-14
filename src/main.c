@@ -18,6 +18,8 @@ int main()
     int time_taken = 0;
     int to_wait = 0;
 
+    puts("\033[2J");
+    puts("\033[H");
     while (current_frame <= TOTAL_FRAMES) {
         start_frame = time(NULL);
         printf ("\033[H");

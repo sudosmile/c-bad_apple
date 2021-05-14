@@ -5,10 +5,10 @@
 #include <time.h>
 #include <unistd.h>
 
-const int SUCCESS = 0;
-const int FPS = 24;
-const int TOTAL_FRAMES = 6569;
-const int LENGTH = 24;
-const int WIDTH = 80;
+#define SUCCESS 0
+#define FPS 24
+#define TOTAL_FRAMES 6569
+#define LENGTH 24
+#define WIDTH 80
 
 #endif /* MAIN_H_ */

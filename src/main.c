@@ -9,7 +9,7 @@ void intHandler(int _)
 {
     (void)_;
     keepRunning = false;
-    fputs("\nstopped by signal\n", stdout);
+    fputs("\nstopped by signal", stdout);
 }
 
 static void print_frame(int frame)
@@ -23,8 +23,6 @@ static void print_frame(int frame)
     substr_frame[length_of_frame] = '\0';
     fputs("\033[H", stdout);
     fputs(substr_frame, stdout);
-    if (frame == FPS * 4)
-        keepRunning = false;
 }
 
 int main(void)

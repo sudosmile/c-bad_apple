@@ -22,7 +22,7 @@ int main()
     puts("\033[H");
     while (current_frame <= TOTAL_FRAMES) {
         start_frame = time(NULL);
-        printf ("\033[H");
+        puts("\033[H");
         print_frame(current_frame);
         time_taken = start_frame - time(NULL);
         to_wait = (1000000 / FPS) - time_taken;

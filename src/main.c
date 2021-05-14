@@ -11,7 +11,7 @@ static void print_frame(int frame)
     }
 }
 
-int main()
+int main(void)
 {
     int current_frame = 0;
     int start_frame = 0;
@@ -30,5 +30,5 @@ int main()
             usleep(to_wait);
         current_frame++;
     }
-    return 0;
+    return SUCCESS;
 }

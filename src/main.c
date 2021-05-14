@@ -49,6 +49,6 @@ int main(void)
             nanosleep(&to_wait, &handler);
         current_frame++;
     }
-    printf("\e[?25h");
+    puts("\e[?25h");
     return SUCCESS;
 }

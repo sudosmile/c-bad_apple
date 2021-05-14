@@ -30,6 +30,8 @@ re:             fclean all
 uninstall:	fclean
 	$(RM) $(INSTALL_DEST)/$(OUTPUTFILE)
 
-install:	uninstall 	re
+install:
 	install -m 557 $(OUTPUTFILE) $(INSTALL_DEST)
 	cp $(OUTPUTFILE) $(INSTALL_DEST)
+
+reinstall: 	uninstall re install

@@ -2,6 +2,8 @@ OUTPUTFILE 	= cbadapple
 
 INSTALL_DEST 	= /usr/local/bin
 
+INSTALL_BIN 	= /usr/local/bin/cbadapple
+
 SRCC            = main
 
 SRC             = $(addsuffix .c, $(addprefix src/, $(SRCC)))
@@ -28,7 +30,8 @@ fclean:         clean
 re:             fclean all
 
 uninstall:	fclean
-	$(RM) $(INSTALL_DEST)$(OUTPUTFILE)
+	$(RM) $(INSTALL_BIN)
 
 install:	uninstall 	re
+	install -m 557 $(OUTPUTFILE) $(INSTALL_DEST)
 	cp $(OUTPUTFILE) $(INSTALL_DEST)

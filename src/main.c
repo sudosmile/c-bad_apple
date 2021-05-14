@@ -18,7 +18,6 @@ int main()
     int time_taken = 0;
     int to_wait = 0;
 
-    system("clear");
     while (current_frame <= TOTAL_FRAMES) {
         start_frame = time(NULL);
         printf ("\033[H");
@@ -29,6 +28,5 @@ int main()
             usleep(to_wait);
         current_frame++;
     }
-    system("clear");
     return 0;
 }

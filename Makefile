@@ -1,6 +1,6 @@
 OUTPUTFILE 	= cbadapple
 
-INSTALL_DEST 	= /usr/bin
+INSTALL_DEST 	= /usr/local/bin
 
 SRCC            = main
 

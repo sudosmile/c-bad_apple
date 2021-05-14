@@ -28,24 +28,20 @@ int main(void)
     int current_frame = 0;
     int start_frame = 0;
     int time_taken = 0;
-    struct timespec to_wait;
-    struct timespec handler;
+    struct timespec to_wait = {0} ;
+    struct timespec handler = {0};
     struct sigaction act = {0};
 
     act.sa_handler = intHandler;
     sigaction(SIGINT, &act, NULL);
-    fputs("\033[2J", stdout);
-    fputs("\033[H", stdout);
-    fputs("\e[?25l", stdout);//remove cursor
+    fputs("\033[2J\033[H\e[?25l", stdout);
     while (keepRunning && current_frame <= TOTAL_FRAMES) {
         start_frame = time(NULL);
-        print_frame(current_frame);
+        print_frame(current_frame++);
         time_taken = start_frame - time(NULL);
-        to_wait.tv_sec = 0;
-        to_wait.tv_nsec = (1000000000 / FPS) - time_taken;
+        to_wait.tv_nsec = (SECOND / FPS) - time_taken;
         if (to_wait.tv_nsec > 0)
             nanosleep(&to_wait, &handler);
-        current_frame++;
     }
     fputs("\e[?25h\n", stdout);
     return SUCCESS;

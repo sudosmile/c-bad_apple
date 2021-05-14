@@ -3,9 +3,9 @@
 
 static void print_frame(int frame)
 {
-    for (int i = (LENGTH * WIDTH * frame);
-            i < (LENGTH * WIDTH * (frame + 1));
-            i++) {
+    int start_of_frame = (LENGTH * WIDTH * frame);
+    int end_of_frame = (LENGTH * WIDTH * (frame + 1));
+    for (int i = start_of_frame; i < end_of_frame; i++) {
         putchar(all_frames[i]);
     }
 }

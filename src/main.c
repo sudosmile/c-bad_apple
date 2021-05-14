@@ -15,6 +15,7 @@ int main()
     int current_frame = 0;
     int start_frame = 0;
     int time_taken = 0;
+    int to_wait = 0;
 
     system("clear");
     while (current_frame <= TOTAL_FRAMES) {
@@ -22,7 +23,9 @@ int main()
         printf ("\033[H");
         print_frame(current_frame);
         time_taken = start_frame - time(NULL);
-        usleep((1000000 / FPS) - time_taken);
+        to_wait = (1000000 / FPS) - time_taken;
+        if (to_wait > 0)
+            usleep(to_wait);
         current_frame++;
     }
     return 0;

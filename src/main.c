@@ -1,7 +1,5 @@
 #include "main.h"
 #include "frames.h"
-#include "../include/main.h"
-#include "../include/frames.h"
 
 volatile bool keepRunning = true;
 

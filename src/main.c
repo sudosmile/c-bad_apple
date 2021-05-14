@@ -1,15 +1,5 @@
-#include <stdio.h>
-#include <time.h>
-#include <unistd.h>
+#include "main.h"
 #include "frames.h"
-
-enum constants {
-    SUCCESS = 0,
-    FPS = 24,
-    TOTAL_FRAMES = 6569,
-    LENGTH = 24,
-    WIDTH = 80
-};
 
 static void print_frame(int frame)
 {

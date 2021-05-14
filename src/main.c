@@ -6,6 +6,7 @@ static void print_frame(int frame)
     const int start_of_frame = (LENGTH * WIDTH * frame);                        // start of frame in the frames string
     const int end_of_frame = (LENGTH * WIDTH * (frame + 1));
 
+    puts("\033[H");                                                             // reset cursor to 0 0
     for (int i = start_of_frame; i < end_of_frame; i++) {
         putchar(all_frames[i]);
     }
@@ -23,7 +24,6 @@ int main(void)
     puts("\033[H");
     while (current_frame <= TOTAL_FRAMES) {
         start_frame = time(NULL);
-        puts("\033[H");                                                         // reset cursor to 0 0
         print_frame(current_frame);
         time_taken = start_frame - time(NULL);
         to_wait.tv_sec = 0;

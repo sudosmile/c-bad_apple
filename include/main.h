@@ -10,7 +10,7 @@ enum constants {
     FPS = 24,
     TOTAL_FRAMES = 6569,
     LENGTH = 24,
-    WIDTH = 80
+    WIDTH = 80,
 };
 
 #endif /* MAIN_H_ */

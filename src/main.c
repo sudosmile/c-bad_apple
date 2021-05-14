@@ -31,9 +31,9 @@ int main()
         printf ("\033[H");
         sprintf(filename, "frames/BA (%d).txt%c", current_frame, '\0');
         print_file(filename);
-        current_frame++;
         time_taken = start_frame - time(NULL);
         usleep((1000000 / fps) - time_taken);
+        current_frame++;
     }
     return 0;
 }

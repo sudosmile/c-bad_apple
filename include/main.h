@@ -5,10 +5,12 @@
 #include <time.h>
 #include <unistd.h>
 
-#define SUCCESS 0
-#define FPS 24
-#define TOTAL_FRAMES 6569
-#define LENGTH 24
-#define WIDTH 80
+enum constants {
+    SUCCESS = 0,
+    FPS = 24,
+    TOTAL_FRAMES = 6569,
+    LENGTH = 24,
+    WIDTH = 80
+};
 
 #endif /* MAIN_H_ */

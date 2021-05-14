@@ -3,7 +3,7 @@
 
 static void print_frame(int frame)
 {
-    int start_of_frame = (LENGTH * WIDTH * frame);
+    const int start_of_frame = (LENGTH * WIDTH * frame);
     int end_of_frame = (LENGTH * WIDTH * (frame + 1));
 
     for (int i = start_of_frame; i < end_of_frame; i++) {

@@ -28,7 +28,7 @@ int main()
         sprintf(filename, "frames/BA (%d).txt%c", current_frame, '\0');
         print_file(filename);
         current_frame++;
-        usleep(25000);
+        usleep(30000);
     }
     return 0;
 }

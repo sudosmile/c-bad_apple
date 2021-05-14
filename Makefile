@@ -33,4 +33,4 @@ uninstall:	fclean
 install:
 	install -m 557 $(OUTPUTFILE) $(INSTALL_DEST)
 
-reinstall: 	uninstall re install
+reinstall: 	uninstall re install fclean

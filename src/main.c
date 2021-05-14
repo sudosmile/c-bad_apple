@@ -1,20 +1,12 @@
 #include "main.h"
-#include "../include/main.h"
+#include "frames.h"
 
-static void print_file(const char *filename)
+static void print_frame(int frame)
 {
-    FILE *fptr;
-    char current_char;
-
-    fptr = fopen(filename, "r");
-    if (!fptr) {
-        fclose(fptr);
-        return;
-    } else {
-        while ((current_char = fgetc(fptr)) != EOF)
-            printf("%c", current_char);
-        fflush(stdout);
-        fclose(fptr);
+    for (int i = (LENGTH * WIDTH * frame);
+            i < (LENGTH * WIDTH * (frame + 1));
+            i++) {
+        printf("%c", all_frames[i]);
     }
 }
 
@@ -23,16 +15,14 @@ int main()
     int current_frame = 0;
     int start_frame = 0;
     int time_taken = 0;
-    char filename[30];
 
     system("clear");
-    while (current_frame <= max_frames) {
+    while (current_frame <= TOTAL_FRAMES) {
         start_frame = time(NULL);
         printf ("\033[H");
-        sprintf(filename, "frames/BA (%d).txt%c", current_frame, '\0');
-        print_file(filename);
+        print_frame(current_frame);
         time_taken = start_frame - time(NULL);
-        usleep((1000000 / fps) - time_taken);
+        usleep((1000000 / FPS) - time_taken);
         current_frame++;
     }
     return 0;

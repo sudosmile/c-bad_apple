@@ -6,7 +6,9 @@
 #include <time.h>
 #include <unistd.h>
 
-const int fps = 30;
-const int max_frames = 6569;
+const int FPS = 30;
+const int TOTAL_FRAMES = 6569;
+const int LENGTH = 24;
+const int WIDTH = 80;
 
 #endif /* MAIN_H_ */

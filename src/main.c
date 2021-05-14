@@ -29,5 +29,6 @@ int main()
             usleep(to_wait);
         current_frame++;
     }
+    system("clear");
     return 0;
 }

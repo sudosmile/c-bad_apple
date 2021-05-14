@@ -1,4 +1,6 @@
-OUTPUTFILE 	= cbad
+OUTPUTFILE 	= cbadapple
+
+INSTALL_DEST 	= /usr/bin
 
 SRCC            = main
 
@@ -24,3 +26,9 @@ fclean:             clean
 	$(RM) $(OUTPUTFILE)
 
 re:             fclean all
+
+uninstall:	fclean
+	$(RM) $(INSTALL_DEST)$(OUTPUTFILE)
+
+install:	uninstall 	re
+	cp $(OUTPUTFILE) $(INSTALL_DEST)

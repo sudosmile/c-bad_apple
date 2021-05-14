@@ -16,13 +16,13 @@ CPPFLAGS        = -Iinclude/
 
 .PHONY          = all, clean, re, uninstall, install
 
-all:        $(OBJ)
+all: 		$(OBJ)
 	$(CC) $(OBJ) -o $(OUTPUTFILE)
 
 clean:
 	$(RM) $(OBJ)
 
-fclean:             clean
+fclean:         clean
 	$(RM) $(OUTPUTFILE)
 
 re:             fclean all

@@ -9,7 +9,7 @@ void intHandler(int _)
 {
     (void)_;
     keepRunning = false;
-    puts(" stopped by signal");
+    fputs("\nstopped by signal\n", stdout);
 }
 
 static void print_frame(int frame)
@@ -19,10 +19,12 @@ static void print_frame(int frame)
     const int length_of_frame = end_of_frame - start_of_frame;
     char substr_frame[LENGTH * WIDTH];
 
-    strncpy(substr_frame, all_frames + start_of_frame, length_of_frame);
+    strncpy(substr_frame, all_frames + start_of_frame, length_of_frame - 1);
     substr_frame[length_of_frame] = '\0';
-    puts("\033[H");
+    fputs("\033[H", stdout);
     fputs(substr_frame, stdout);
+    if (frame == FPS * 4)
+        keepRunning = false;
 }
 
 int main(void)
@@ -36,9 +38,9 @@ int main(void)
 
     act.sa_handler = intHandler;
     sigaction(SIGINT, &act, NULL);
-    puts("\033[2J");
-    puts("\033[H");
-    puts("\e[?25l");//remove cursor
+    fputs("\033[2J", stdout);
+    fputs("\033[H", stdout);
+    fputs("\e[?25l", stdout);//remove cursor
     while (keepRunning && current_frame <= TOTAL_FRAMES) {
         start_frame = time(NULL);
         print_frame(current_frame);
@@ -49,6 +51,6 @@ int main(void)
             nanosleep(&to_wait, &handler);
         current_frame++;
     }
-    puts("\e[?25h");
+    fputs("\e[?25h\n", stdout);
     return SUCCESS;
 }

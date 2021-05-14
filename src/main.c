@@ -6,7 +6,7 @@ static void print_frame(int frame)
     for (int i = (LENGTH * WIDTH * frame);
             i < (LENGTH * WIDTH * (frame + 1));
             i++) {
-        printf("%c", all_frames[i]);
+        putchar(all_frames[i]);
     }
 }
 

@@ -10,7 +10,7 @@ OBJ             = $(SRC:.c=.o)
 
 CC           	= gcc
 
-CFLAGS          = -W -Wall -Wextra -g3
+CFLAGS          = -W -Wall -Wextra -Werror -g3
 
 CPPFLAGS        = -Iinclude/
 

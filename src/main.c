@@ -7,7 +7,6 @@ void intHandler(int _)
 {
     (void)_;
     keepRunning = false;
-    fputs("\nstopped by signal", stdout);
 }
 
 static void print_frame(int frame)

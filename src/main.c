@@ -14,7 +14,7 @@ static void print_frame(int frame)
     const int start_of_frame = (LENGTH * WIDTH * frame);
     const int end_of_frame = (LENGTH * WIDTH * (frame + 1));
     const int length_of_frame = end_of_frame - start_of_frame;
-    char substr_frame[LENGTH * WIDTH] = "";
+    char substr_frame[LENGTH * WIDTH + 1] = "";
 
     strncpy(substr_frame, all_frames + start_of_frame, length_of_frame - 1);
     substr_frame[length_of_frame] = '\0';

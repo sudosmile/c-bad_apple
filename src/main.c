@@ -1,3 +1,4 @@
+#define  _GNU_SOURCE
 #include "main.h"
 #include "frames.h"
 
@@ -40,7 +41,7 @@ int main(void)
         print_frame(current_frame++);
         gettimeofday(&end, NULL);
         time_taken_nsec = (end.tv_usec - start.tv_usec) * 1000;
-        to_wait.tv_nsec = (SECOND / FPS) - time_taken_nsec;
+        to_wait.tv_nsec = (long) (SECOND / FPS) - (long) time_taken_nsec;
         if (to_wait.tv_nsec > 0)
             nanosleep(&to_wait, &handler);
     }

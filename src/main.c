@@ -1,4 +1,11 @@
 #define  _GNU_SOURCE
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <signal.h>
+#include <stdbool.h>
 #include "main.h"
 #include "frames.h"
 
@@ -26,7 +33,6 @@ static void print_frame(int frame)
 int main(void)
 {
     int current_frame = 0;
-    long int time_taken_nsec = 0;
     struct timespec to_wait = {0};
     struct timespec handler = {0};
     struct timeval start = {0};
@@ -40,7 +46,7 @@ int main(void)
         gettimeofday(&start, NULL);
         print_frame(current_frame++);
         gettimeofday(&end, NULL);
-        time_taken_nsec = (end.tv_usec - start.tv_usec) * 1000;
+        long int time_taken_nsec = (end.tv_usec - start.tv_usec) * 1000;
         to_wait.tv_nsec = (long) (SECOND / FPS) - (long) time_taken_nsec;
         if (to_wait.tv_nsec > 0)
             nanosleep(&to_wait, &handler);

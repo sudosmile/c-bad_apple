@@ -4,7 +4,7 @@ SRCC            = main
 SRC             = $(addsuffix .c, $(addprefix src/, $(SRCC)))
 OBJ             = $(SRC:.c=.o)
 CC           	= gcc
-CFLAGS          = -W -Wall -Wextra -Werror -g3 -O2 -std=c11
+CFLAGS          = -W -Wall -Wextra -Werror -g3 -O2 -std=c99
 CPPFLAGS        = -Iinclude/
 
 .PHONY: all clean re uninstall install

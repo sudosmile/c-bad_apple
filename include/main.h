@@ -1,14 +1,6 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
-#include <stdio.h>
-#include <string.h>
-#include <time.h>
-#include <sys/time.h>
-#include <unistd.h>
-#include <signal.h>
-#include <stdbool.h>
-
 enum constants {
     SUCCESS = 0,
     FPS = 30,
